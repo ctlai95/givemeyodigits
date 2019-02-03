@@ -2,10 +2,6 @@
 import tensorflow as tf
 from tensorflow import keras
 
-# Helper libraries
-import numpy as np
-import matplotlib.pyplot as plt
-
 mnist = keras.datasets.mnist
 (train_images, train_labels), (test_images, test_labels) = mnist.load_data()
 
@@ -28,5 +24,5 @@ test_loss, test_acc = model.evaluate(test_images, test_labels)
 print('Test accuracy:', test_acc)
 
 predictions = model.predict(test_images)
-print(np.argmax(predictions[0]))
+print(predictions[0])
 print(test_labels[0])
